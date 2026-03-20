@@ -7,434 +7,287 @@
 
 <style>
 
-:root{
---primary:#2c3e50;
---secondary:#2980b9;
---light:#f4f7f6;
---text:#333;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Segoe UI,Roboto,sans-serif;
+body {
+  font-family: 'Calibri', 'Segoe UI', 'Arial', sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #111;
+  background: #e8e8e8;
+  padding: 30px 20px;
 }
 
-body{
-background:var(--light);
-padding:20px;
-color:var(--text);
+.page {
+  max-width: 780px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 48px 56px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
 }
 
-.container{
-max-width:900px;
-margin:auto;
-background:white;
-padding:40px;
-border-radius:8px;
-box-shadow:0 0 15px rgba(0,0,0,0.05);
+/* ── Header ──────────────────────────────── */
+.cv-header {
+  text-align: center;
+  margin-bottom: 14px;
 }
 
-header{
-display:flex;
-align-items:center;
-border-bottom:2px solid #eee;
-padding-bottom:25px;
-margin-bottom:30px;
+.cv-header h1 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
 }
 
-.avatar{
-width:140px;
-height:140px;
-border-radius:8px;
-overflow:hidden;
-border:3px solid var(--secondary);
-margin-right:25px;
+.cv-header .contact-line {
+  font-size: 12.5px;
+  color: #333;
 }
 
-.avatar img{
-width:100%;
-height:100%;
-object-fit:cover;
+.cv-header .contact-line a {
+  color: #1a5276;
+  text-decoration: none;
 }
 
-h1{
-font-size:32px;
-color:var(--primary);
+.cv-header .contact-line a:hover {
+  text-decoration: underline;
 }
 
-.job-title{
-color:var(--secondary);
-font-weight:600;
-margin:8px 0 15px;
+/* ── Section ─────────────────────────────── */
+.section {
+  margin-bottom: 16px;
 }
 
-.contact-info{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
-font-size:14px;
+.section-title {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  border-bottom: 1.5px solid #111;
+  padding-bottom: 2px;
 }
 
-section{
-margin-bottom:30px;
+/* ── Entry (job / project / edu) ─────────── */
+.entry {
+  margin-bottom: 12px;
 }
 
-h2{
-border-left:5px solid var(--secondary);
-padding-left:12px;
-margin-bottom:15px;
-color:var(--primary);
-font-size:20px;
-background:#fafafa;
-padding-top:4px;
-padding-bottom:4px;
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1px;
 }
 
-.item-header{
-display:flex;
-justify-content:space-between;
-margin-bottom:4px;
+.entry-title {
+  font-weight: 700;
+  font-size: 13px;
 }
 
-.item-title{
-font-weight:700;
-font-size:16px;
+.entry-date {
+  font-size: 12.5px;
+  color: #444;
+  white-space: nowrap;
+  margin-left: 12px;
+  flex-shrink: 0;
 }
 
-.item-date{
-color:#777;
+.entry-subtitle {
+  font-style: italic;
+  font-size: 12.5px;
+  color: #333;
+  margin-bottom: 4px;
 }
 
-.item-subtitle{
-color:var(--secondary);
-font-style:italic;
-margin-bottom:8px;
+.entry-sub-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
 }
 
-ul{
-padding-left:20px;
+/* ── Bullet list ─────────────────────────── */
+ul.bullet {
+  padding-left: 18px;
+  margin-top: 2px;
 }
 
-li{
-margin-bottom:6px;
+ul.bullet li {
+  margin-bottom: 3px;
+  font-size: 13px;
 }
 
-.skills-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
+/* ── Skills table ────────────────────────── */
+.skills-table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.skill-group h3{
-margin-bottom:8px;
+.skills-table td {
+  vertical-align: top;
+  padding: 2px 0;
+  font-size: 13px;
 }
 
-.skills-list{
-display:flex;
-flex-wrap:wrap;
-gap:8px;
+.skills-table td:first-child {
+  font-weight: 700;
+  width: 140px;
+  padding-right: 12px;
 }
 
-.skill-item{
-background:#edf2f7;
-border:1px solid #cbd5e0;
-padding:4px 10px;
-font-size:13px;
-border-radius:4px;
-}
-
-@media(max-width:768px){
-
-header{
-flex-direction:column;
-text-align:center;
-}
-
-.avatar{
-margin-bottom:15px;
-margin-right:0;
-}
-
-.contact-info{
-grid-template-columns:1fr;
-}
-
-.skills-grid{
-grid-template-columns:1fr;
-}
-
+/* ── Objective ───────────────────────────── */
+.objective-text {
+  font-size: 13px;
+  text-align: justify;
 }
 
 </style>
 </head>
 
 <body>
+<div class="page">
 
-<div class="container">
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <div class="cv-header">
+    <h1>Võ Đức Thịnh</h1>
+    <div class="contact-line">
+      0367 447 736 &nbsp;·&nbsp; ducthinh15809@gmail.com &nbsp;·&nbsp; An Giang &nbsp;·&nbsp;
+      <a href="https://github.com/AthanVo" target="_blank" rel="noopener">github.com/AthanVo</a>
+    </div>
+  </div>
 
-<header>
+  <!-- ═══════════════ MỤC TIÊU ═══════════════ -->
+  <div class="section">
+    <div class="section-title">Mục tiêu nghề nghiệp</div>
+    <p class="objective-text">
+      Lập trình viên .NET với kinh nghiệm phát triển và nâng cấp các hệ thống phần mềm doanh nghiệp
+      bằng <b>C#, .NET Framework</b> và <b>.NET Core</b>. Có kinh nghiệm xây dựng các module chức
+      năng, phát triển <b>RESTful API</b>, thiết kế cơ sở dữ liệu và tối ưu truy vấn <b>SQL Server</b>.
+      Đã tham gia phát triển các hệ thống quản lý thực tế như <b>Inventory Management System</b> và
+      các ứng dụng web. Mong muốn phát triển theo hướng <b>Fullstack Developer</b>, tham gia xuyên
+      suốt các giai đoạn thiết kế, phát triển và tối ưu các hệ thống phần mềm doanh nghiệp.
+    </p>
+  </div>
 
-<div class="avatar">
-<img src="anhcv.jpg">
-</div>
+  <!-- ═══════════════ KINH NGHIỆM ═══════════════ -->
+  <div class="section">
+    <div class="section-title">Kinh nghiệm làm việc</div>
 
-<div>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Mylan Group</span>
+        <span class="entry-date">08/2025 – Hiện tại</span>
+      </div>
+      <div class="entry-subtitle">.NET Developer &ndash; <i>Toàn thời gian</i></div>
+      <ul class="bullet">
+        <li>Tham gia phát triển và nâng cấp các hệ thống <b>phần mềm quản lý doanh nghiệp</b> trên nền tảng .NET Framework.</li>
+        <li>Xây dựng các <b>module chức năng</b> cho hệ thống quản lý kho: nhập kho, xuất kho và theo dõi tồn kho.</li>
+        <li>Thiết kế và phát triển giao diện người dùng bằng <b>DevExpress WinForms</b>.</li>
+        <li>Phân tích yêu cầu nghiệp vụ và triển khai <b>logic xử lý hệ thống</b>.</li>
+        <li>Tối ưu truy vấn <b>SQL Server</b> nhằm cải thiện hiệu suất xử lý dữ liệu.</li>
+        <li>Tham gia bảo trì, nâng cấp và cải tiến các chức năng của hệ thống hiện có.</li>
+      </ul>
+    </div>
 
-<h1>VÕ ĐỨC THỊNH</h1>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Công Ty TNHH Công Nghệ Phần Mềm Phúc Lam Phương</span>
+        <span class="entry-date">03/2025 – 05/2025</span>
+      </div>
+      <div class="entry-subtitle">Thực tập sinh Fullstack Developer</div>
+      <ul class="bullet">
+        <li>Phát triển hệ thống Web Quản lý Khách sạn bằng <b>ASP.NET Core MVC</b>.</li>
+        <li>Xây dựng <b>RESTful API</b> phục vụ xử lý dữ liệu đặt phòng, khách hàng và lịch phòng.</li>
+        <li>Thiết kế chức năng <b>Group Booking</b> phục vụ đặt phòng số lượng lớn.</li>
+        <li>Tích hợp và kiểm thử dữ liệu giữa hệ thống ứng dụng và <b>SQL Server</b>.</li>
+      </ul>
+    </div>
+  </div>
 
-<div class="job-title">
-.NET Developer / Fullstack Developer
-</div>
+  <!-- ═══════════════ DỰ ÁN ═══════════════ -->
+  <div class="section">
+    <div class="section-title">Dự án</div>
 
-<div class="contact-info">
-<div>📞 0367447736</div>
-<div>📧 ducthinh15809@gmail.com</div>
-<div>📍 An Giang</div>
-<div>🔗 https://github.com/AthanVo</div>
-</div>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Inventory Management System</span>
+        <span class="entry-date">2025</span>
+      </div>
+      <div class="entry-subtitle">C# &middot; SQL Server &middot; DevExpress</div>
+      <ul class="bullet">
+        <li>Phát triển hệ thống quản lý <b>nhập kho, xuất kho và tồn kho</b>.</li>
+        <li>Xây dựng các module xử lý dữ liệu và <b>logic nghiệp vụ</b>.</li>
+        <li>Thiết kế báo cáo dữ liệu bằng <b>DevExpress Reporting</b>.</li>
+        <li>Tối ưu truy vấn <b>SQL Server</b> cho các báo cáo dữ liệu lớn.</li>
+      </ul>
+    </div>
 
-</div>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Module Định mức công việc</span>
+        <span class="entry-date">2025</span>
+      </div>
+      <div class="entry-subtitle">Internal HR System &middot; C# &middot; .NET Framework &middot; SQL Server &middot; DevExpress WinForms</div>
+      <ul class="bullet">
+        <li>Phát triển module <b>Quản lý Định mức Công việc</b> cho hệ thống quản lý nhân sự nội bộ.</li>
+        <li>Xây dựng các chức năng <b>CRUD danh mục định mức công việc và chi tiết định mức</b>.</li>
+        <li>Triển khai <b>logic nghiệp vụ cho quy trình duyệt định mức</b> bởi Trưởng bộ phận.</li>
+        <li>Thiết kế giao diện quản lý dữ liệu bằng <b>DevExpress GridView</b>; xử lý và tối ưu truy vấn bằng <b>LINQ to SQL và Transaction</b>.</li>
+        <li>Module hiện <b>đang được sử dụng trong hệ thống nội bộ của doanh nghiệp</b>.</li>
+      </ul>
+    </div>
 
-</header>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Website đặt vé xem phim</span>
+        <span class="entry-date">2024</span>
+      </div>
+      <div class="entry-subtitle">ASP.NET Core MVC &middot; SQL Server &middot; VNPay</div>
+      <ul class="bullet">
+        <li>Xây dựng quy trình <b>đặt vé trực tuyến</b> hoàn chỉnh.</li>
+        <li>Tích hợp thanh toán trực tuyến bằng <b>VNPay</b>.</li>
+        <li>Thiết kế hệ thống quản lý <b>lịch chiếu phim</b>.</li>
+      </ul>
+    </div>
+  </div>
 
-<section>
+  <!-- ═══════════════ KỸ NĂNG ═══════════════ -->
+  <div class="section">
+    <div class="section-title">Kỹ năng</div>
+    <table class="skills-table">
+      <tr>
+        <td>Programming</td>
+        <td>C#, .NET Framework, .NET Core, ASP.NET MVC, RESTful API, WinForms, JavaScript</td>
+      </tr>
+      <tr>
+        <td>Database &amp; Tools</td>
+        <td>SQL Server, PostgreSQL, DevExpress, Git, Docker, Postman</td>
+      </tr>
+      <tr>
+        <td>Khác</td>
+        <td>OOP &amp; Design Pattern, SQL Query Optimization, SDLC, Đọc tài liệu tiếng Anh, AI Assisted Development</td>
+      </tr>
+    </table>
+  </div>
 
-<h2>MỤC TIÊU NGHỀ NGHIỆP</h2>
-
-<p>
-Lập trình viên .NET với kinh nghiệm phát triển và nâng cấp các hệ thống 
-phần mềm doanh nghiệp bằng <b>C#, .NET Framework và .NET Core</b>. 
-Có kinh nghiệm xây dựng các module chức năng, phát triển <b>RESTful API</b>, 
-thiết kế cơ sở dữ liệu và tối ưu truy vấn <b>SQL Server</b>. 
-
-Đã tham gia phát triển các hệ thống quản lý thực tế như 
-<b>Inventory Management System</b> và các ứng dụng web. 
-
-Mong muốn phát triển theo hướng <b>Fullstack Developer</b>, 
-tham gia xuyên suốt các giai đoạn thiết kế, phát triển và tối ưu 
-các hệ thống phần mềm doanh nghiệp.
-</p>
-
-</section>
-
-<section>
-
-<h2>KINH NGHIỆM LÀM VIỆC</h2>
-
-<div>
-
-<div class="item-header">
-<div class="item-title">Mylan Group</div>
-<div class="item-date">08/2025 - Hiện tại</div>
-</div>
-
-<div class="item-subtitle">
-.NET Developer
-</div>
-
-<ul>
-
-<li>Tham gia phát triển và nâng cấp các hệ thống <b>phần mềm quản lý doanh nghiệp</b> trên nền tảng .NET Framework.</li>
-
-<li>Xây dựng và phát triển các <b>module chức năng</b> cho hệ thống quản lý kho như nhập kho, xuất kho và theo dõi tồn kho.</li>
-
-<li>Thiết kế và phát triển giao diện người dùng bằng <b>DevExpress WinForms</b>.</li>
-
-<li>Phân tích yêu cầu nghiệp vụ và triển khai <b>logic xử lý hệ thống</b>.</li>
-
-<li>Tối ưu truy vấn <b>SQL Server</b> nhằm cải thiện hiệu suất xử lý dữ liệu.</li>
-
-<li>Tham gia bảo trì, nâng cấp và cải tiến các chức năng của hệ thống hiện có.</li>
-
-</ul>
-
-</div>
-
-<div style="margin-top:20px">
-
-<div class="item-header">
-<div class="item-title">Công Ty TNHH Công Nghệ Phần Mềm Phúc Lam Phương</div>
-<div class="item-date">03/2025 - 05/2025</div>
-</div>
-
-<div class="item-subtitle">
-Thực tập sinh Fullstack Developer
-</div>
-
-<ul>
-
-<li>Phát triển hệ thống Web Quản lý Khách sạn bằng <b>ASP.NET Core MVC</b>.</li>
-
-<li>Xây dựng <b>RESTful API</b> phục vụ xử lý dữ liệu đặt phòng, khách hàng và lịch phòng.</li>
-
-<li>Thiết kế chức năng <b>Group Booking</b> phục vụ đặt phòng số lượng lớn.</li>
-
-<li>Tích hợp và kiểm thử dữ liệu giữa hệ thống ứng dụng và <b>SQL Server</b>.</li>
-
-</ul>
-
-</div>
-
-</section>
-
-<section>
-
-<h2>KỸ NĂNG</h2>
-
-<div class="skills-grid">
-
-<div class="skill-group">
-
-<h3>Programming</h3>
-
-<div class="skills-list">
-<div class="skill-item">C#</div>
-<div class="skill-item">.NET Framework</div>
-<div class="skill-item">.NET Core</div>
-<div class="skill-item">ASP.NET MVC</div>
-<div class="skill-item">RESTful API</div>
-<div class="skill-item">WinForms</div>
-<div class="skill-item">JavaScript</div>
-</div>
-
-</div>
-
-<div class="skill-group">
-
-<h3>Database & Tools</h3>
-
-<div class="skills-list">
-<div class="skill-item">SQL Server</div>
-<div class="skill-item">PostgreSQL</div>
-<div class="skill-item">DevExpress</div>
-<div class="skill-item">Git</div>
-<div class="skill-item">Docker</div>
-<div class="skill-item">Postman</div>
-</div>
+  <!-- ═══════════════ HỌC VẤN ═══════════════ -->
+  <div class="section">
+    <div class="section-title">Học vấn</div>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Đại học Nam Cần Thơ</span>
+        <span class="entry-date">2021 – 2025</span>
+      </div>
+      <div class="entry-subtitle">Kỹ sư Kỹ thuật Phần mềm</div>
+    </div>
+  </div>
 
 </div>
-
-</div>
-
-<div style="margin-top:15px">
-
-<h3>Other Skills</h3>
-
-<div class="skills-list">
-<div class="skill-item">OOP & Design Pattern</div>
-<div class="skill-item">SQL Query Optimization</div>
-<div class="skill-item">Software Development Lifecycle</div>
-<div class="skill-item">Reading English Technical Docs</div>
-<div class="skill-item">AI Assisted Development</div>
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2>DỰ ÁN</h2>
-
-<div>
-
-<div class="item-header">
-<div class="item-title">Inventory Management System</div>
-<div class="item-date">2025</div>
-</div>
-
-<div class="item-subtitle">
-C# • SQL Server • DevExpress
-</div>
-
-<ul>
-
-<li>Phát triển hệ thống quản lý <b>nhập kho, xuất kho và tồn kho</b>.</li>
-
-<li>Xây dựng các module xử lý dữ liệu và <b>logic nghiệp vụ</b>.</li>
-
-<li>Thiết kế báo cáo dữ liệu bằng <b>DevExpress Reporting</b>.</li>
-
-<li>Tối ưu truy vấn <b>SQL Server</b> cho các báo cáo dữ liệu lớn.</li>
-
-</ul>
-
-</div>
-
-<div style="margin-top:20px">
-
-<div class="item-header">
-<div class="item-title">Module Định mức công việc</div>
-<div class="item-date">2025</div>
-</div>
-
-<div class="item-subtitle">
-Internal HR System • C# • .NET Framework • SQL Server • DevExpress WinForms
-</div>
-
-<ul>
-
-<li>Phát triển module <b>Quản lý Định mức Công việc</b> cho hệ thống quản lý nhân sự nội bộ của doanh nghiệp.</li>
-
-<li>Xây dựng các chức năng <b>CRUD danh mục định mức công việc và chi tiết định mức</b>.</li>
-
-<li>Triển khai <b>logic nghiệp vụ cho quy trình duyệt định mức bởi Trưởng bộ phận</b>.</li>
-
-<li>Thiết kế giao diện quản lý dữ liệu bằng <b>DevExpress GridView</b>.</li>
-
-<li>Xử lý và tối ưu truy vấn dữ liệu bằng <b>LINQ to SQL và Transaction</b>.</li>
-
-<li>Phát triển chức năng <b>nhân bản định mức công việc và quản lý năng suất lao động</b>.</li>
-
-<li>Module hiện <b>đang được sử dụng trong hệ thống nội bộ của doanh nghiệp</b>.</li>
-
-</ul>
-
-</div>
-
-<div style="margin-top:20px">
-
-<div class="item-header">
-<div class="item-title">Website đặt vé xem phim</div>
-<div class="item-date">2024</div>
-</div>
-
-<div class="item-subtitle">
-ASP.NET Core MVC • SQL Server • VNPay
-</div>
-
-<ul>
-
-<li>Xây dựng quy trình <b>đặt vé trực tuyến</b> hoàn chỉnh.</li>
-
-<li>Tích hợp thanh toán trực tuyến bằng <b>VNPay</b>.</li>
-
-<li>Thiết kế hệ thống quản lý <b>lịch chiếu phim</b>.</li>
-
-</ul>
-
-</div>
-
-</section>
-
-<section>
-
-<h2>HỌC VẤN</h2>
-
-<div class="item-header">
-<div class="item-title">Đại học Nam Cần Thơ</div>
-<div class="item-date">2021 - 2025</div>
-</div>
-
-<div class="item-subtitle">
-Kỹ sư Kỹ thuật Phần mềm
-</div>
-
-</section>
-
-</div>
-
 </body>
 </html>
