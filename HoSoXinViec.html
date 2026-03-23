@@ -147,6 +147,74 @@ ul.bullet li {
   text-align: justify;
 }
 
+/* ── Print ───────────────────────────────── */
+@media print {
+
+  @page {
+    size: A4;
+    margin: 18mm 16mm 18mm 16mm;
+  }
+
+  body {
+    background: #fff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    max-width: 100% !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+  }
+
+  /* Không cho section bị cắt ngang trang */
+  .section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Không cho mỗi entry (job/project) bị cắt ngang trang */
+  .entry {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Tiêu đề section luôn đi cùng nội dung bên dưới */
+  .section-title {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* Tiêu đề entry luôn đi cùng nội dung bên dưới */
+  .entry-header,
+  .entry-subtitle {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* Không cắt giữa header và nội dung */
+  .cv-header {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Không cắt giữa các dòng bullet */
+  ul.bullet li {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Bỏ link màu xanh khi in */
+  a {
+    color: #111 !important;
+    text-decoration: none !important;
+  }
+
+}
+
 </style>
 </head>
 
@@ -168,7 +236,7 @@ ul.bullet li {
     <p class="objective-text">
       Lập trình viên .NET với kinh nghiệm phát triển và nâng cấp các hệ thống phần mềm doanh nghiệp
       bằng <b>C#, .NET Framework</b> và <b>.NET Core</b>. Có kinh nghiệm xây dựng các module chức
-      năng, phát triển <b>RESTful API</b>, thiết kế cơ sở dữ liệu và tối ưu truy vấn <b>SQL Server</b>.
+      năng, phát triển, thiết kế cơ sở dữ liệu và tối ưu truy vấn <b>SQL Server</b>.
       Đã tham gia phát triển các hệ thống quản lý thực tế như <b>Inventory Management System</b> và
       các ứng dụng web. Mong muốn phát triển theo hướng <b>Fullstack Developer</b>, tham gia xuyên
       suốt các giai đoạn thiết kế, phát triển và tối ưu các hệ thống phần mềm doanh nghiệp.
